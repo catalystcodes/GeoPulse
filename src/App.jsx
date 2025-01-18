@@ -10,8 +10,9 @@ const App = () => {
   const [selectedCountry, setSelectedCountry] = useState(null);
 
   const handleSearch = (query) => {
-    if (query.length === 0) {
+    if (query === "") {
       setCountries([]);
+      setSelectedCountry(null);
       setError("");
       return;
     }
@@ -48,6 +49,7 @@ const App = () => {
 
   const handleShowDetails = (country) => {
     setSelectedCountry(country);
+    console.log("Selected country:", country);
   };
 
   return (
